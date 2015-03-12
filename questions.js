@@ -1,0 +1,22 @@
+var quesArray = { "questions" : [
+	{qu:"Grand Central Terminal, Park Avenue, New York is the world's", c1:"Largest railway station", c2:"Longest railway station", c3:"Highest railway station", c4:"All of the above", ans:"c1"},
+	{qu:"Entomology is the science that studies", c1:"Behavior of human beings", c2:"Insects", c3:"The origin and history of technical and scientific terms", c4:"The formation of rocks", ans:"c2"},
+	{qu:"Eritrea, which became the 182nd member of the UN in 1993, is in the continent of", c1:"Asia", c2:"Africa", c3:"Europe", c4:"Australia", ans:"c2"},
+	{qu:"Garampani sanctuary is located at", c1:"Junagarh, Gujarat", c2:"Diphu, Assam", c3:"Kohima, Nagaland", c4:"Gangtok, Sikkim", ans:"c2"},
+	{qu:"For which of the following disciplines is Nobel Prize awarded?", c1:"Physics and Chemistry", c2:"Physiology or Medicine", c3:"Literature, Peace and Economics", c4:"All of the above", ans:"c4"},
+	{qu:"Hitler party which came into power in 1933 is known as", c1:"Labour Party", c2:"Nazi Party", c3:"Ku-Klux-Klan", c4:"Kevin Rudd and Julia Gillard's Backstabathon", ans:"c2"},
+	{qu:"FFC stands for", c1:"Foreign Finance Corporation", c2:"Film Finance Corporation", c3:"Federation of Football Council", c4:"None of the above", ans:"c2"},
+	{qu:"The World's fastest shorthand writer was", c1:"Dr. G. D. Bist", c2:"J.R.D. Tata", c3:"J.M. Tagore", c4:"Khudada Khan", ans:"c1"},
+	{qu:"What name is given to a group of Flamingoes?", c1:"Pack", c2:"Periwinkle", c3:"Flock", c4:"Flamboyance", ans:"c4"},
+	{qu:"How many toes does a dog have in total?", c1:"10", c2:"22", c3:"18", c4:"4", ans:"c3"},
+	{qu:"What is a baby seal called?", c1:"Baby seal", c2:"Jackknife", c3:"Calf", c4:"Pup", ans:"c4"},
+	{qu:"How many keys on a standard piano?", c1:"88", c2:"72", c3:"90", c4:"27", ans:"c1"},
+	{qu:"What is the capital city of Canada?", c1:"Ontario", c2:"Nevada", c3:"St. Petersburg", c4:"Ottowa", ans:"c4"},
+	{qu:"What is the official currency of Pakistan?", c1:"Pence", c2:"Rupee", c3:"Calh", c4:"Kushari", ans:"c2"},
+	{qu:"", c1:"", c2:"", c3:"", c4:"", ans:""},
+	{qu:"", c1:"", c2:"", c3:"", c4:"", ans:""},
+	{qu:"", c1:"", c2:"", c3:"", c4:"", ans:""},
+	{qu:"", c1:"", c2:"", c3:"", c4:"", ans:""},
+	{qu:"", c1:"", c2:"", c3:"", c4:"", ans:""},
+	{qu:"", c1:"", c2:"", c3:"", c4:"", ans:""}
+]};
