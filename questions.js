@@ -13,10 +13,10 @@ var quesArray = { "questions" : [
 	{qu:"How many keys on a standard piano?", c1:"88", c2:"72", c3:"90", c4:"27", ans:"c1"},
 	{qu:"What is the capital city of Canada?", c1:"Ontario", c2:"Nevada", c3:"St. Petersburg", c4:"Ottowa", ans:"c4"},
 	{qu:"What is the official currency of Pakistan?", c1:"Pence", c2:"Rupee", c3:"Calh", c4:"Kushari", ans:"c2"},
-	{qu:"", c1:"", c2:"", c3:"", c4:"", ans:""},
-	{qu:"", c1:"", c2:"", c3:"", c4:"", ans:""},
-	{qu:"", c1:"", c2:"", c3:"", c4:"", ans:""},
-	{qu:"", c1:"", c2:"", c3:"", c4:"", ans:""},
+	{qu:"Who painted the ceiling of the Sistine Chapel?", c1:"Michaelangelo", c2:"Makarov", c3:"Da Vinci", c4:"Kevin Rudd", ans:"c1"},
+	{qu:"In TV's The Simpsons, what is the name of Ned Flanders two children?", c1:"Eric and Earl", c2:"Bart and Lisa", c3:"Rod and Todd", c4:"Nad and Chad", ans:"c3"},
+	{qu:"0 degrees Celsius is the equivalent of what compared to Fahrenheit?", c1:"-88 F", c2:"45 F", c3:"0 F", c4:"32 F", ans:"c4"},
+	{qu:"The number '0118 999 881 999 119 725 3' is from what TV series", c1:"Monty Python and The Holy Grail", c2:"The IT Crowd", c3:"Rove", c4:"How I Met YOur Mother", ans:"c2"},
 	{qu:"", c1:"", c2:"", c3:"", c4:"", ans:""},
 	{qu:"", c1:"", c2:"", c3:"", c4:"", ans:""}
 ]};
