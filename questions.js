@@ -17,6 +17,6 @@ var quesArray = { "questions" : [
 	{qu:"In TV's The Simpsons, what is the name of Ned Flanders two children?", c1:"Eric and Earl", c2:"Bart and Lisa", c3:"Rod and Todd", c4:"Nad and Chad", ans:"c3"},
 	{qu:"0 degrees Celsius is the equivalent of what compared to Fahrenheit?", c1:"-88 F", c2:"45 F", c3:"0 F", c4:"32 F", ans:"c4"},
 	{qu:"The number '0118 999 881 999 119 725 3' is from what TV series", c1:"Monty Python and The Holy Grail", c2:"The IT Crowd", c3:"Rove", c4:"How I Met YOur Mother", ans:"c2"},
-	{qu:"", c1:"", c2:"", c3:"", c4:"", ans:""},
-	{qu:"", c1:"", c2:"", c3:"", c4:"", ans:""}
+	{qu:"In early 2014, Kevin Rudd moved his residency to", c1:"Tasmania", c2:"The United Arab Emirates", c3:"The United States", c4:"Interstellar Space", ans:"c3"},
+	{qu:"Kevin Rudd: PM is a mini-series featured on which the prime-time TV show", c1:"SBS World news", c2:"The Block", c3:"Hey, Hey! It's Rudderday", c4:"Rove", ans:""}
 ]};
