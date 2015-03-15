@@ -1,1 +1,3 @@
-// Generic Header Comment
+$(document).ready(function(){
+	
+})
