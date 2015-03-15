@@ -1,4 +1,4 @@
-var quesArray = { "questions" : [
+{ "questions" : [
 	{qu:"Grand Central Terminal, Park Avenue, New York is the world's", c1:"Largest railway station", c2:"Longest railway station", c3:"Highest railway station", c4:"All of the above", ans:"c1"},
 	{qu:"Entomology is the science that studies", c1:"Behavior of human beings", c2:"Insects", c3:"The origin and history of technical and scientific terms", c4:"The formation of rocks", ans:"c2"},
 	{qu:"Eritrea, which became the 182nd member of the UN in 1993, is in the continent of", c1:"Asia", c2:"Africa", c3:"Europe", c4:"Australia", ans:"c2"},
