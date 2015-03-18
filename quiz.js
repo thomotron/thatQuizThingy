@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var quDB = JSON.parse($.getJSON('questions.json'));
+	var quDB = $.getJSON('questions.json');
 	var quesIDs = [];
 	
 	function checkAnswer(id) {
