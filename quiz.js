@@ -32,18 +32,21 @@ $(document).ready(function(){
 		} else {
 			alert("Incorrect!\nThe answer was " + ans);
 		}
-		alert("You've answered " + (curQues+1) + " questions.")
+		alert("You've answered " + curQues + " questions.")
 		displayQues()
 	}
 	
 	function generateQuesIDs(amt) {
 		for (var i=0;i<amt;i++) {
 			quesIDs[i] = Math.floor(Math.random()*20);
+			while (quesIDs[i] == quesIDs[i-1]) {
+				quesIDs[i] = Math.floor(Math.random()*20);
+			}
 		}
 	}
 	
 	function displayQues() {
-		if (curQues == (totalQues-1)) {
+		if (curQues == totalQues) {
 			finish()
 		} else {
 			curQues++;
