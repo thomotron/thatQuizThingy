@@ -9,16 +9,32 @@ $(document).ready(function(){
 	init()
 	
 	function init() {
+		//VAR DECS
 		quesIDs = [];
 		curQues = 0;
 		totalQues = 5;
+		//PAGE STYLING
+		$('#submit').prop('disabled', false);
+		$('#submit').val("Submit");
+		//INIT
 		generateQuesIDs(totalQues);
 		displayQues();
 	}
 	
+	$('input[name=debug]').click(function(){
+		if ($('input[name=debug]').is(':checked')) {
+			$('#submit').val("CurQues: " + curQues);
+		} else {
+			$('#submit').val("Submit");
+		}
+	});
+	
 	$('#submit').click(function(){
-		if ($('input[name=selection]').is(':checked')) {
+		if ($('input[name=selection]').is(':checked') && !($('input[name=debug]').is(':checked'))) {
 			checkAns()
+		} else if ($('input[name=debug]').is(':checked')) { //DEBUG
+			displayQues(); //DEBUG
+			$('#submit').val("CurQues: " + curQues); //DEBUG
 		} else {
 			alert("Select an answer!")
 		}
@@ -28,16 +44,15 @@ $(document).ready(function(){
 		usrAns = $('input[name=selection]:checked').attr('id');
 		ans = quDB.questions[quesIDs[curQues]].ans;
 		if (usrAns == ans) {
-			alert("Correct!");
+			alert("Correct!"); //DEBUG
 		} else {
-			alert("Incorrect!\nThe answer was " + ans);
+			alert("Incorrect!\nThe answer was " + ans); //DEBUG
 		}
-		alert("You've answered " + curQues + " questions.")
 		displayQues()
 	}
 	
 	function generateQuesIDs(amt) {
-		for (var i=0;i<amt;i++) {
+		for (var i=0;i<=amt;i++) {
 			quesIDs[i] = Math.floor(Math.random()*20);
 			while (quesIDs[i] == quesIDs[i-1]) {
 				quesIDs[i] = Math.floor(Math.random()*20);
@@ -64,6 +79,7 @@ $(document).ready(function(){
 	}
 	
 	function finish() {
+		$('#submit').prop('disabled', true);
 		alert("You've answered all the questions!");
 	}
 })
