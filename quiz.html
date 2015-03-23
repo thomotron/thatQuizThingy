@@ -6,7 +6,7 @@
       <script type="text/javascript" src="jquery.js"></script>                           <!--jQuery-->
       <script type="text/javascript" src="cookieLib.js"></script>                        <!--cookieLib-->
       <script type="text/javascript" src="jsonLib.js"></script>                          <!--jsonLib-->
-      <!--<script type="application/json" src="questions.json" id="quDB"></script>-->    <!--questions-->
+      <script type="text/javascript" src="questions.json" id="quDB"></script>            <!--questions-->
       <script type="text/javascript" src="quiz.js"></script>                             <!--backend-->	    
       <!-- <link href="styles.css" rel="stylesheet" type="text/css" /> -->               <!--stylesheet-->	
    </head>
@@ -18,6 +18,12 @@
          <input type="radio" name="selection" id="c3" /><label id="labl_c3">PLACEHOLDER</label><br/>
          <input type="radio" name="selection" id="c4" /><label id="labl_c4">PLACEHOLDER</label><br/>
       </p>
+	  <p>
       <input type="submit" name="submit" id="submit" value="Submit" class="button" />
+	  <input type="checkbox" name="debug" id="debug" /><label>Question override</label>
+	  </p>
+	  <p>
+	  <div class="progress" /><br/>
+	  
    </body>
 </html>
