@@ -9,6 +9,8 @@ $(document).ready(function(){
 	init()
 	
 	function init() {
+		//STOP PREVIOUS CODE
+		$('.timeBar').stop(false,false);
 		//VAR DECS
 		quesIDs = [];
 		curQues = 0;
@@ -16,9 +18,11 @@ $(document).ready(function(){
 		//PAGE STYLING
 		$('#submit').prop('disabled', false);
 		$('#submit').val("Submit");
+		$('.timeBar').height('240px');
 		//INIT
 		generateQuesIDs(totalQues);
 		displayQues();
+		timer();
 	}
 	
 	$('input[name=debug]').click(function(){
@@ -54,10 +58,19 @@ $(document).ready(function(){
 	function generateQuesIDs(amt) {
 		for (var i=0;i<=amt;i++) {
 			quesIDs[i] = Math.floor(Math.random()*20);
-			while (quesIDs[i] == quesIDs[i-1]) {
+			while (isIDUsed(quesIDs[i],i) && i !== 0) {
 				quesIDs[i] = Math.floor(Math.random()*20);
 			}
 		}
+	}
+	
+	function isIDUsed(id,curID) {
+		for (var i = 0;i<curID;i++) {
+		  if (id == quesIDs[i]) {
+			  return true;
+		  }
+		}
+		return false;
 	}
 	
 	function displayQues() {
@@ -76,6 +89,13 @@ $(document).ready(function(){
 			$('#labl_c3').html(c3);
 			$('#labl_c4').html(c4);
 		}
+	}
+	
+	function timer() {
+		$('.timeBar').animate({'height': '0px', 'marginTop': '240px'},10000,"linear",function(){
+			alert("You took too long!");
+			displayQues();
+		});
 	}
 	
 	function finish() {
