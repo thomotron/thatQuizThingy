@@ -1,29 +1,33 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-      <title>Quiz</title>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Quiz</title>
       <script type="text/javascript" src="jquery.js"></script>                           <!--jQuery-->
-      <script type="text/javascript" src="cookieLib.js"></script>                        <!--cookieLib-->
-      <script type="text/javascript" src="jsonLib.js"></script>                          <!--jsonLib-->
-      <script type="text/javascript" src="questions.json" id="quDB"></script>            <!--questions-->
-      <script type="text/javascript" src="quiz.js"></script>                             <!--backend-->	    
-      <!-- <link href="styles.css" rel="stylesheet" type="text/css" /> -->               <!--stylesheet-->	
-   </head>
+<script type="text/javascript" src="cookieLib.js"></script>                        <!--cookieLib-->
+<script type="text/javascript" src="jsonLib.js"></script>                          <!--jsonLib-->
+<script type="text/javascript" src="questions.json" id="quDB"></script>            <!--questions-->
+<script type="text/javascript" src="quiz.js"></script>                             <!--backend-->	    
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<!--stylesheet-->	
+</head>
    <body>
-      <div class="question">PLACEHOLDER</div>
-      <p>
-         <input type="radio" name="selection" id="c1" /><label id="labl_c1">PLACEHOLDER</label><br/>
-         <input type="radio" name="selection" id="c2" /><label id="labl_c2">PLACEHOLDER</label><br/>
-         <input type="radio" name="selection" id="c3" /><label id="labl_c3">PLACEHOLDER</label><br/>
-         <input type="radio" name="selection" id="c4" /><label id="labl_c4">PLACEHOLDER</label><br/>
-      </p>
-	  <p>
-      <input type="submit" name="submit" id="submit" value="Submit" class="button" />
-	  <input type="checkbox" name="debug" id="debug" /><label>Question override</label>
-	  </p>
-	  <p>
-	  <div class="progress" /><br/>
-	  
+   <div class="container">
+      <div class="quContainer">
+         <div class="question">If you can see this, you've either</div>
+         <div class="ansContainer">
+            <input type="radio" name="selection" id="c1" /><label id="labl_c1">Used an unsupported browser,</label><br/>
+            <input type="radio" name="selection" id="c2" /><label id="labl_c2">Stopped scripts from running,</label><br/>
+            <input type="radio" name="selection" id="c3" /><label id="labl_c3">Fiddled with my code or</label><br/>
+            <input type="radio" name="selection" id="c4" /><label id="labl_c4">Found some kind of bug that I missed.</label><br/><br/>
+            <input type="submit" name="submit" id="submit" value="Submit" class="button" />
+            <input type="checkbox" name="debug" id="debug" /><label>[DEBUG] Question Override</label>
+         </div>
+         <div class="progress">Please select an answer.</div>
+      </div>
+      <div class="timeContainer">
+         <div class="timeBar" style="" />
+      </div>
+      </div> 
    </body>
 </html>
