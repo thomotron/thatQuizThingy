@@ -1,1 +1,54 @@
-
+.timeBar {
+	max-height: 240px;
+	height: 179.9pt;
+	width: 20px;
+	background-color: #09F;
+	border-radius: 3px;
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+}
+.timeContainer {
+	height: 250px;
+	width: 30px;
+	background-color: #DDD;
+	border-radius: 5px;
+	float: right;
+}
+.quContainer {
+	width: 350px;
+	height: 240px;
+	float: left;
+	border-radius: 5px;
+	padding: 5px;
+}
+.container {
+	height: 250px;
+	width: 400px;
+	background-color: #EEE;
+	padding: 10px;
+	margin: auto;
+}.progress {
+	text-align: center;
+	height: 20px;
+	background-color: #DDD;
+	border-radius: 5px;
+	width: auto;
+}
+.question {
+	width: auto;
+	height: 40px;
+	background-color: #DDD;
+	border-radius: 5px;
+	padding: 5px;
+}
+.ansContainer {
+	margin-top: 12px;
+	width: auto;
+	background-color: #DDD;
+	height: 135px;
+	padding: 5px;
+	margin-bottom: 12px;
+	border-radius: 5px;
+}
