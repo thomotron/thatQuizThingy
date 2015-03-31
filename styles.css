@@ -1,16 +1,16 @@
 .timeBar {
-	max-height: 240px;
-	height: 179.9pt;
+	max-height: 245px;
+	height: 245px;
 	width: 20px;
 	background-color: #09F;
-	border-radius: 3px;
+	border-radius: 5px;
 	margin-top: 5px;
 	margin-right: 5px;
 	margin-bottom: 5px;
 	margin-left: 5px;
 }
 .timeContainer {
-	height: 250px;
+	height: 255px;
 	width: 30px;
 	background-color: #DDD;
 	border-radius: 5px;
@@ -18,23 +18,26 @@
 }
 .quContainer {
 	width: 350px;
-	height: 240px;
+	height: 255px;
 	float: left;
 	border-radius: 5px;
-	padding: 5px;
+	padding-right: 5px;
+	padding-left: 5px;
 }
-.container {
-	height: 250px;
+.quizContainer {
+	height: 255px;
 	width: 400px;
 	background-color: #EEE;
 	padding: 10px;
 	margin: auto;
+	border-radius: 5px;
 }.progress {
 	text-align: center;
 	height: 20px;
 	background-color: #DDD;
 	border-radius: 5px;
 	width: auto;
+	margin-bottom: 5px;
 }
 .question {
 	width: auto;
@@ -44,11 +47,45 @@
 	padding: 5px;
 }
 .ansContainer {
-	margin-top: 12px;
+	margin-top: 7px;
 	width: auto;
 	background-color: #DDD;
 	height: 135px;
 	padding: 5px;
-	margin-bottom: 12px;
+	margin-bottom: 8px;
 	border-radius: 5px;
+}
+.status {
+	text-align: center;
+	height: 20px;
+	background-color: #DDD;
+	border-radius: 5px;
+	width: auto;
+}
+.configBar {
+	height: 101px;
+	width: auto;
+	background-color: rgba(0,0,0,0.6);
+	position: absolute;
+	top: 40px;
+	right: 0px;
+	left: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	color: #FFF;
+	padding-top: 57px;
+	padding-bottom: 57px
+}
+.configContainer {
+	width: 170px;
+	height: 70px;
+	font-family: Arial, Helvetica, sans-serif;
+	display: block;
+	text-align: center;
+	padding-top: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	padding-left: 15px;
+	margin-left: auto;
+	margin-right: auto;
 }
