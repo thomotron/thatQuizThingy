@@ -8,21 +8,30 @@ $(document).ready(function(){
 	var score;
 	var time;
 	
-	$('input[name=selection]').prop('disabled',true);
-	$('#submit').prop('disabled',true);
-	$('.timeBar').css({'background-color': '#CCC'});
-	$('.question').css({'color': '#BBB'});
-	$('.ansContainer').css({'color': '#BBB'});
-	$('.progress').css({'color': '#BBB'});
-	$('.status').css({'color': '#BBB'});
+	config();
+	
+	function config() {
+		resetTimeBar();
+		$('input[name=selection]').prop('disabled',true);
+		$('#submit').prop('disabled',true);
+		$('#reset').prop('disabled',true);
+		$('.timeBar').css({'background-color': '#CCC'});
+		$('.question').css({'color': '#BBB'});
+		$('.ansContainer').css({'color': '#BBB'});
+		$('.progress').css({'color': '#BBB'});
+		$('.status').css({'color': '#BBB'});
+	}
 	
 	$('#apply').click(function(){
 		init();
 	});
 	
+	$('#reset').click(function(){
+		$('.configBar').toggle('drop',{direction: 'up'}, 500);
+		config();
+	});
+	
 	function init() {
-		resetTimeBar();
-		
 		quesIDs = [];
 		curQues = 0;
 		totalQues = parseInt($('#questions').val());
@@ -30,7 +39,7 @@ $(document).ready(function(){
 		score = 0;
 		
 		$('#submit').prop('disabled', false);
-		$('#submit').val("Submit");
+		$('#reset').prop('disabled',false);
 		$('.timeBar').height('245px');
 		$('input[name=selection]').prop('checked',false);
 		$('input[name=selection]').prop('disabled',false);
