@@ -1,5 +1,5 @@
-function saveJSON(object, cookieName, expiry) {
-	array = JSON.stringify(array);
+function saveJSON(cookieName, object, expiry) {
+	object = JSON.stringify(object);
 	setCookie(cookieName,object,expiry);
 }
 
@@ -7,6 +7,6 @@ function getJSON(cookieName) {
 	if (!doesCookieExist(cookieName)) {
 		return null;
 	} else {
-		JSON.parse(getCookieValue(cookieName));
+		return JSON.parse(getCookieValue(cookieName));
 	}
 }
