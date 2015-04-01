@@ -8,18 +8,20 @@ $(document).ready(function(){
 	var score;
 	var time;
 	
+	window.onbeforeunload = function() {
+		return "You are about to lose all current progess on your quiz!"; //Message only works in Chrome, prompt everywhere else.
+	};
+	
 	config();
 	
 	function config() {
 		resetTimeBar();
-		$('input[name=selection]').prop('disabled',true);
-		$('#submit').prop('disabled',true);
-		$('#reset').prop('disabled',true);
-		$('.timeBar').css({'background-color': '#CCC'});
-		$('.question').css({'color': '#BBB'});
-		$('.ansContainer').css({'color': '#BBB'});
-		$('.progress').css({'color': '#BBB'});
-		$('.status').css({'color': '#BBB'});
+		unfocus();	
+		if (doesCookieExist('remember')) {
+			$('#questions').val(getCookieValue('cfg_totalQues'));
+			$('#difficulty').val(getCookieValue('cfg_time'));
+			$('#remember').prop('checked',true);
+		}
 	}
 	
 	$('#apply').click(function(){
@@ -34,9 +36,16 @@ $(document).ready(function(){
 	function init() {
 		quesIDs = [];
 		curQues = 0;
-		totalQues = parseInt($('#questions').val());
-		time = parseInt($('#difficulty').val());
 		score = 0;
+		if (doesCookieExist('remember')) {
+			totalQues = parseInt(getCookieValue('cfg_totalQues'));
+			time = parseInt(getCookieValue('cfg_time'));
+		} else {
+			totalQues = parseInt($('#questions').val());
+			time = parseInt($('#difficulty').val());
+			setCookie('cfg_totalQues',totalQues,30);
+			setCookie('cfg_time',time,30);
+		}
 		
 		$('#submit').prop('disabled', false);
 		$('#reset').prop('disabled',false);
@@ -48,12 +57,33 @@ $(document).ready(function(){
 		$('.ansContainer').animate({'color': '#000'},500,'linear');
 		$('.progress').animate({'color': '#000'},500,'linear');
 		$('.status').animate({'color': '#000'},500,'linear');
+		
+		if ($('#remember').is(':checked')) {
+			setCookie('remember','LOOKATALLTHISUSELESSDATA',30);
+			setCookie('cfg_time',$('#difficulty').val(),30);
+			setCookie('cfg_totalQues',$('#questions').val(),30);	
+		} else {
+			deleteCookie('remember');
+			deleteCookie('cfg_time');
+			deleteCookie('cfg_totalQues');
+		}
 		 
 		$('.configBar').toggle('drop',{direction: 'up'}, 500);
 		
 		generateQuesIDs(totalQues);
 		displayQues();
 		timer();
+	}
+	
+	function unfocus() {
+		$('input[name=selection]').prop('disabled',true);
+		$('#submit').prop('disabled',true);
+		$('#reset').prop('disabled',true);
+		$('.timeBar').css({'background-color': '#CCC'});
+		$('.question').css({'color': '#BBB'});
+		$('.ansContainer').css({'color': '#BBB'});
+		$('.progress').css({'color': '#BBB'});
+		$('.status').css({'color': '#BBB'});
 	}
 	
 	$('#submit').click(function(){
@@ -75,12 +105,12 @@ $(document).ready(function(){
 			$('.status').css({'background-color': '#0F0'});
 			progress();
 			score++;
-			$('.status').animate({'background-color': '#DDD'},1000,'linear',displayQues());
+			$('.status').animate({'background-color': '#DDD'},300,'linear',displayQues());
 		} else {
 			$('.status').html("Incorrect! The answer was choice " + ans.substr(1) + ".");
 			$('.status').css({'background-color': '#F00'});
 			progress();
-			$('.status').animate({'background-color': '#DDD)'},1000,'linear',displayQues());
+			$('.status').animate({'background-color': '#DDD)'},300,'linear',displayQues());
 		}
 	}
 	
@@ -133,10 +163,14 @@ $(document).ready(function(){
 	function timer() {
 		$('.timeBar').animate({'height': '0px', 'marginTop': '245px'},time,'linear',function(){
 			resetTimeBar();
-			$('.status').html("You took too long!");
-			$('.status').css({'background-color': '#F00','color': '#FFF'});
-			progress();
-			$('.status').animate({'background-color': '#DDD','color': '#000'},1000,'linear',displayQues());
+			if ($('input[name=selection]').is(':checked')) {
+				checkAns();
+			} else {
+				$('.status').html("You took too long!");
+				$('.status').css({'background-color': '#F00'});
+				progress();
+				$('.status').animate({'background-color': '#DDD'},1000,'linear',displayQues());
+			}
 		});
 	}
 	
