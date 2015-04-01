@@ -37,14 +37,18 @@ $(document).ready(function(){
 		quesIDs = [];
 		curQues = 0;
 		score = 0;
-		if (doesCookieExist('remember')) {
+		if (doesCookieExist('remember') && $('#remember').is(':checked')) {
 			totalQues = parseInt(getCookieValue('cfg_totalQues'));
 			time = parseInt(getCookieValue('cfg_time'));
+            setCookie('remember','LOOKATALLTHISUSELESSDATA',30);
+			setCookie('cfg_time',$('#difficulty').val(),30);
+			setCookie('cfg_totalQues',$('#questions').val(),30);
 		} else {
 			totalQues = parseInt($('#questions').val());
 			time = parseInt($('#difficulty').val());
-			setCookie('cfg_totalQues',totalQues,30);
-			setCookie('cfg_time',time,30);
+			deleteCookie('remember');
+			deleteCookie('cfg_time');
+			deleteCookie('cfg_totalQues');
 		}
 		
 		$('#submit').prop('disabled', false);
@@ -57,16 +61,6 @@ $(document).ready(function(){
 		$('.ansContainer').animate({'color': '#000'},500,'linear');
 		$('.progress').animate({'color': '#000'},500,'linear');
 		$('.status').animate({'color': '#000'},500,'linear');
-		
-		if ($('#remember').is(':checked')) {
-			setCookie('remember','LOOKATALLTHISUSELESSDATA',30);
-			setCookie('cfg_time',$('#difficulty').val(),30);
-			setCookie('cfg_totalQues',$('#questions').val(),30);	
-		} else {
-			deleteCookie('remember');
-			deleteCookie('cfg_time');
-			deleteCookie('cfg_totalQues');
-		}
 		 
 		$('.configBar').toggle('drop',{direction: 'up'}, 500);
 		
@@ -169,7 +163,7 @@ $(document).ready(function(){
 				$('.status').html("You took too long!");
 				$('.status').css({'background-color': '#F00'});
 				progress();
-				$('.status').animate({'background-color': '#DDD'},1000,'linear',displayQues());
+				$('.status').animate({'background-color': '#DDD'},300,'linear',displayQues());
 			}
 		});
 	}
