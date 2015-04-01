@@ -1,66 +1,94 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html
-    xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Quiz</title>
-        <script type="text/javascript" src="jquery.js"></script>                 <!--jQuery-->
-        <script type="text/javascript" src="jqueryUI.js"></script>               <!--jQuery UI-->
-        <script type="text/javascript" src="cookieLib.js"></script>              <!--cookieLib-->
-        <script type="text/javascript" src="jsonLib.js"></script>                <!--jsonLib-->
-        <script type="text/javascript" src="questions.json" id="quDB"></script>  <!--questions-->
-        <script type="text/javascript" src="quiz.js"></script>                   <!--backend-->
-        <link href="styles.css" rel="stylesheet" type="text/css" />              <!--stylesheet-->
-    </head>
-    <body>
-        <div class="quizContainer">
-            <div class="quContainer">
-                <div class="question">If you can see this, you've either:</div>
-                <div class="ansContainer">
-                    <input type="radio" name="selection" id="c1" />
-                    <label id="labl_c1">Used an unsupported browser,</label>
-                    <br/>
-                    <input type="radio" name="selection" id="c2" />
-                    <label id="labl_c2">Stopped scripts from running,</label>
-                    <br/>
-                    <input type="radio" name="selection" id="c3" />
-                    <label id="labl_c3">Fiddled with my code or</label>
-                    <br/>
-                    <input type="radio" name="selection" id="c4" />
-                    <label id="labl_c4">Found some kind of bug that I missed.</label>
-                    <br/>
-                    <br/>
-                    <input type="submit" name="submit" id="submit" value="Submit" class="button" />
-                    <input type="submit" name="reset" id="reset" value="Reset" class="button" />
-                </div>
-                <div class="progress">You haven't answered any questions yet...</div>
-                <div class="status">Please select an answer.</div>
-            </div>
-            <div class="timeContainer">
-                <div class="timeBar"/></div>
-        </div>
-        <div class="configBar">
-            <div class="configContainer">
-                <label>Difficulty:</label>
-                <select name="difficulty" id="difficulty" class="dropDown">
-                    <option value="25000" class="dropDown">Trackpad</option>
-                    <option value="15000" class="dropDown">Easy</option>
-                    <option value="10000" class="dropDown" selected="selected">Normal</option>
-                    <option value="5000" class="dropDown">Hard</option>
-                    <option value="1000" class="dropDown">Wizard</option>
-                </select>
-                <br/>
-                <label>Questions:</label>
-                <select name="questions" id="questions" class="dropDown">
-                    <option value="3" class="dropDown">3</option>
-                    <option value="6" class="dropDown" selected="selected">6</option>
-                    <option value="9" class="dropDown">9</option>
-                    <option value="12" class="dropDown">12</option>
-                    <option value="15" class="dropDown">15</option>
-                </select>
-                <br/>
-                <input type="submit" name="apply" id="apply" value="Apply" class="button" />
-            </div>
-        </div>
-    </body>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Quiz</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!--jQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+	<!--jQuery UI-->
+	<script type="text/javascript" src="cookieLib.js"></script>
+	<!--cookieLib-->
+	<script type="text/javascript" src="jsonLib.js"></script>
+	<!--jsonLib-->
+	<script type="text/javascript" src="questions.json" id="quDB"></script>
+	<!--questions-->
+	<script type="text/javascript" src="quiz.js"></script>
+	<!--backend-->
+	<link href="styles.css" rel="stylesheet" type="text/css" />
+	<!--stylesheet-->
+</head>
+
+<body>
+	<div class="quizContainer">
+		<div class="quContainer">
+			<div class="question">If you can see this, you've either:</div>
+			<div class="ansContainer">
+				<input type="radio" name="selection" id="c1" />
+				<label id="labl_c1">Used an unsupported browser,</label>
+				<br/>
+				<input type="radio" name="selection" id="c2" />
+				<label id="labl_c2">Stopped scripts from running,</label>
+				<br/>
+				<input type="radio" name="selection" id="c3" />
+				<label id="labl_c3">Fiddled with my code or</label>
+				<br/>
+				<input type="radio" name="selection" id="c4" />
+				<label id="labl_c4">Found some kind of bug that I missed.</label>
+				<br/>
+				<br/>
+				<input type="submit" name="submit" id="submit" value="Submit" class="button" />
+				<input type="submit" name="reset" id="reset" value="Reset" class="button" /> </div>
+			<div class="progress">You haven't answered any questions yet...</div>
+			<div class="status">Please select an answer.</div>
+		</div>
+		<div class="timeContainer">
+			<div class="timeBar" /></div>
+		<div class="scoreContainer">
+			<div align="center">High Scores</div>
+			<br/>
+			<div class="scoreLabels">Trackpad</div>
+			<div class="scores"> </div>
+			<br/>
+			<div class="scoreLabels">Easy</div>
+			<div class="scores"> </div>
+			<br/>
+			<div class="scoreLabels">Normal</div>
+			<div class="scores"> </div>
+			<br/>
+			<div class="scoreLabels">Hard</div>
+			<div class="scores"> </div>
+			<br/>
+			<div class="scoreLabels">Wizard</div>
+			<div class="scores"> </div>
+		</div>
+	</div>
+	<div class="configBar">
+		<div class="configContainer">
+			<label>Difficulty:</label>
+			<select name="difficulty" id="difficulty">
+				<option value="25000">Trackpad</option>
+				<option value="15000">Easy</option>
+				<option value="10000" selected="selected">Normal</option>
+				<option value="5000">Hard</option>
+				<option value="1000">Wizard</option>
+			</select>
+			<br/>
+			<label>Questions:</label>
+			<select name="questions" id="questions">
+				<option value="3">3</option>
+				<option value="6" selected="selected">6</option>
+				<option value="9">9</option>
+				<option value="12">12</option>
+				<option value="15">15</option>
+			</select>
+			<br/>
+			<input type="submit" name="apply" id="apply" value="Apply" class="button" />
+			<input type="checkbox" name="remember" id="remember" value="Remember" />
+			<label>Remember</label>
+		</div>
+	</div>
+</body>
+
 </html>
